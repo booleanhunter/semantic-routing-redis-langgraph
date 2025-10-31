@@ -1,4 +1,4 @@
-# Bank Semantic Router 🏦🤖
+# Bank Semantic Router
 
 An intelligent banking chatbot with semantic routing and slot-filling orchestration. Built with FastAPI, LangGraph, RedisVL Semantic Router, LangChain tools, and Next.js frontend.
 
@@ -12,7 +12,7 @@ This application uses a modern AI stack:
 - **Modern Frontend** (Next.js 14 + TypeScript + Tailwind): Responsive banking UI with chat interface
 - **Conversation Memory** (RedisVL MessageHistory): Structured conversation tracking with session management
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.11+
@@ -183,7 +183,7 @@ Assistant: Your EMI will be ₹16,134 per month for 36 months.
 - Total Interest: ₹80,832
 - Principal: ₹5,00,000
 
-Was this helpful? [👍 Yes] [👎 No]
+Was this helpful? [ Yes] [ No]
 ```
 
 ### Credit Card Recommendation
@@ -285,7 +285,7 @@ python3 test_system.py
 - **Docker**: Containerization
 - **Docker Compose**: Multi-service orchestration
 
-## 🏗️ Architecture Flow
+## Architecture Flow
 
 ```
 User Query
@@ -309,7 +309,7 @@ User Query
     [Memory Management] → Clear conversation if helpful
 ```
 
-## 📊 Key Features
+## Key Features
 
 ### Semantic Routing
 - Intent recognition with confidence scores
@@ -338,12 +338,12 @@ User Query
 After completing a task (showing a proposal/recommendation), the system asks "Was this helpful?" with Yes/No buttons. When the user clicks **Yes**, the conversation memory is automatically cleared for a fresh start.
 
 ### Benefits
-✅ **No stale data**: Old conversation context doesn't interfere with new requests  
-✅ **User-controlled**: Clearing happens only when user confirms helpfulness  
-✅ **Smooth UX**: Automatic "fresh start" without manual session management  
-✅ **Feedback tracking**: Backend logs user satisfaction
+**No stale data**: Old conversation context doesn't interfere with new requests  
+**User-controlled**: Clearing happens only when user confirms helpfulness  
+**Smooth UX**: Automatic "fresh start" without manual session management  
+**Feedback tracking**: Backend logs user satisfaction
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Redis Not Running?
 ```bash
