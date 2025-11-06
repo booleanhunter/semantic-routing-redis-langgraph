@@ -285,7 +285,8 @@ User Query
          ↓
     [Memory Management] → Clear conversation if helpful
 ```
-<img width="2158" height="2034" alt="image" src="https://github.com/user-attachments/assets/a6cf4d14-2939-4818-9ad8-8c01b749549d" />
+
+<img width="2158" height="2034" alt="image" src="https://github.com/user-attachments/assets/5689fa72-6a4e-44d4-aca2-7c75f8928a05" />
 
 
 ## Key Features
