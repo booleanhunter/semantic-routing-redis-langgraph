@@ -40,8 +40,6 @@ app.add_middleware(
 # Initialize OpenAI client
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# LangCache initialization removed
-
 # Import orchestrator
 try:
     from orchestrator import handle_turn
@@ -87,8 +85,6 @@ async def chat(request: ChatRequest):
         query = request.text.strip()
         session_id = request.sessionId or f"session_{request.userId or 'anon'}_{int(__import__('time').time())}"
         
-        # LangCache removed - using semantic routing and conversation memory only
-        
         # Use orchestrator if available, otherwise fallback to simple LLM
         if orchestrator_available:
             print(f"Using LangGraph Orchestrator for: '{query[:50]}...'")
@@ -113,8 +109,6 @@ async def chat(request: ChatRequest):
             add_message(session_id, "user", query)
             add_message(session_id, "assistant", result['reply'], intent, score)
             print(f"Stored conversation turn in Redis (session: {session_id})")
-            
-            # LangCache storage removed
             
             # Show feedback when proposal is returned (task completed)
             show_feedback = bool(result.get("proposal"))
@@ -149,8 +143,6 @@ async def chat(request: ChatRequest):
             )
             
             reply = response.choices[0].message.content
-            
-            # LangCache storage removed
             
             return ChatResponse(
                 reply=reply,
