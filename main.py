@@ -31,11 +31,23 @@ app = FastAPI(title="Bank Semantic Router API", description="Intelligent banking
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        f"https://{os.getenv('CODESPACE_NAME')}-3000.app.github.dev" if os.getenv('CODESPACE_NAME') else None,
+        f"https://{os.getenv('CODESPACE_NAME')}-3000.app.github.dev:3000" if os.getenv('CODESPACE_NAME') else None
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Log CORS configuration
+codespace_name = os.getenv('CODESPACE_NAME')
+print(f"CODESPACE_NAME environment variable: {codespace_name}")
+if codespace_name:
+    print(f"GitHub Codespace URL configured: https://{codespace_name}-3000.app.github.dev")
+else:
+    print("Running locally (no GitHub Codespace detected)")
 
 # Initialize OpenAI client
 openai.api_key = os.getenv("OPENAI_API_KEY")

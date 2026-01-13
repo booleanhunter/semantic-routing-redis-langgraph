@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ```bash
 # Option A: Docker (Recommended)
-docker run -d --name redis-stack -p 6380:6379 -p 8001:8001 redis/redis-stack:latest
+docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
 
 # Option B: Homebrew (macOS)
 brew tap redis-stack/redis-stack
